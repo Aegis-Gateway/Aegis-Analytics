@@ -1,5 +1,5 @@
 FROM grafana/grafana-enterprise:latest
 
-ADD ./config/Datasource.yml /etc/grafana/provisioning/datasources/
-ADD ./config/Dashboard.yml /etc/grafana/provisioning/dashboards/
-ADD ./config/aegis-gateway-analytics.json /etc/grafana/provisioning/dash/aegis-gateway-analytics.json
+ADD ./config/Datasource.yaml /etc/grafana/provisioning/datasources/main.yaml
+ADD ./config/Dashboard.yaml /etc/grafana/provisioning/dashboards/main.yaml
+ADD ./config/dashboards /var/lib/grafana/dashboards
