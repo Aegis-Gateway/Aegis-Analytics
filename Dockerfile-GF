@@ -1,5 +1,5 @@
 FROM grafana/grafana-enterprise:latest
 
 ADD ./volumes/grafana/Datasource.yaml /etc/grafana/provisioning/datasources/Datasource.yaml
-ADD .volumes/grafana/Dashboard.yaml /etc/grafana/provisioning/dashboards/Dashboard.yaml
-ADD .volumes/grafana/dashboards /var/lib/grafana/dashboards
+ADD ./volumes/grafana/Dashboard.yaml /etc/grafana/provisioning/dashboards/Dashboard.yaml
+ADD ./volumes/grafana/dashboards /var/lib/grafana/dashboards
