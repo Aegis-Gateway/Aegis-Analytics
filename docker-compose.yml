@@ -1,6 +1,8 @@
 services:
     clickhouse:
-        image: clickhouse/clickhouse-server:latest
+        build:
+            context: .
+            dockerfile: Dockerfile
         user: '101:101'
         restart: unless-stopped
         ports:
@@ -9,7 +11,6 @@ services:
         volumes:
             - ${PWD}/volumes/clickhouse/config.xml:/etc/clickhouse-server/config.d/config.xml
             - ${PWD}/volumes/clickhouse/users.xml:/etc/clickhouse-server/users.d/users.xml
-            - ${PWD}/volumes/clickhouse/init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
         environment:
             - CLICKHOUSE_USER=clickhouse
             - CLICKHOUSE_PASSWORD=<YOUR_PASSWORD>
