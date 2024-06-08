@@ -2,7 +2,7 @@ services:
     clickhouse:
         build:
             context: .
-            dockerfile: Dockerfile
+            dockerfile: Dockerfile-CH
         user: '101:101'
         restart: unless-stopped
         ports:
@@ -15,7 +15,9 @@ services:
             - CLICKHOUSE_USER=clickhouse
             - CLICKHOUSE_PASSWORD=<YOUR_PASSWORD>
     grafana:
-        image: grafana/grafana-enterprise:latest
+        build:
+            context: .
+            dockerfile: Dockerfile-GF
         restart: unless-stopped
         ports:
             - '5687:3000/tcp'

@@ -1,0 +1,4 @@
+FROM grafana/grafana-enterprise:latest
+
+ADD ./config/Datasource.yml /etc/grafana/provisioning/datasources/
+ADD ./config/Dashboard.yml /etc/grafana/provisioning/dashboards/
