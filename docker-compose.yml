@@ -22,7 +22,6 @@ services:
         ports:
             - '5687:3000/tcp'
         volumes:
-            - ${PWD}/volumes/grafana/:/etc/grafana/provisioning/datasources
             - /path/to/ssl/fullchain.pem:/etc/certs/fullchain.pem
             - /path/to/ssl/privkey.pem:/etc/certs/privkey.pem
         environment:

@@ -2,6 +2,7 @@ apiVersion: 1
 datasources:
   - name: ClickHouse
     type: grafana-clickhouse-datasource
+    uid: "edo51kijanxmoa"
     jsonData:
       port: 1238
       host: 172.17.0.1
