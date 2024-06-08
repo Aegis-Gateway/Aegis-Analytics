@@ -9,22 +9,10 @@ services:
         volumes:
             - ${PWD}/volumes/clickhouse/config.xml:/etc/clickhouse-server/config.d/config.xml
             - ${PWD}/volumes/clickhouse/users.xml:/etc/clickhouse-server/users.d/users.xml
-            - ${PWD}/volumes/clickhouse/init_database.sql:/var/clickhouse/schema/init_database.sql
+            - ${PWD}/volumes/clickhouse/init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
         environment:
             - CLICKHOUSE_USER=clickhouse
             - CLICKHOUSE_PASSWORD=<YOUR_PASSWORD>
-        entrypoint: [ '/bin/sh', '-c' ]
-        command: |
-            "
-            while ! clickhouse-client --host clickhouse --user clickhouse --password <YOUR_PASSWORD> -q \"SHOW databases;\"; do
-                echo waiting for clickhouse up
-                sleep 1
-            done
-      
-            clickhouse-client --host clickhouse --user clickhouse --password <YOUR_PASSWORD> --queries-file /var/clickhouse/schema/init_database.sql
-      
-            tail -f /dev/null
-            "
     grafana:
         image: grafana/grafana-enterprise:latest
         restart: unless-stopped
