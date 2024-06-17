@@ -6,6 +6,7 @@ clickhouse client -n <<-EOSQL
       id UUID NOT NULL DEFAULT generateUUIDv4(),
       response_time Float32 NOT NULL,
       origin String NOT NULL,
+      sha256hash String DEFAULT '',
       project String NOT NULL,
       endpoint String NOT NULL,
       time DateTime64 NOT NULL,
