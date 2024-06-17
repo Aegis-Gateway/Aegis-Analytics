@@ -12,6 +12,7 @@ clickhouse client -n <<-EOSQL
       path String NOT NULL,
       user_agent String NOT NULL,
       status_code UInt16 NOT NULL,
-      ip String NOT NULL
+      ip String NOT NULL,
+      message String DEFAULT ''
     ) ORDER BY time;
 EOSQL
