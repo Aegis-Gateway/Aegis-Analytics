@@ -1,3 +1,3 @@
-# Aegis Analytics
+# apictl analytics
 
-Analytics for Aegis Gateway Server 
+Analytics for apictl server 
