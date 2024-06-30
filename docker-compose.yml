@@ -10,6 +10,7 @@ services:
             - '1238:9000/tcp'
         volumes:
             - ${PWD}/volumes/clickhouse/config.xml:/etc/clickhouse-server/config.d/config.xml
+            - ${PWD}/volumes/clickhouse/z_log_disable.xml:/etc/clickhouse-server/config.d/z_log_disable.xml
             - ${PWD}/volumes/clickhouse/users.xml:/etc/clickhouse-server/users.d/users.xml
         environment:
             - CLICKHOUSE_USER=clickhouse
