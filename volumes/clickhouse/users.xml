@@ -2,10 +2,13 @@
 <clickhouse replace="true">
     <profiles>
         <default>
-            <max_memory_usage>10000000000</max_memory_usage>
+            <max_memory_usage>1000000000</max_memory_usage>
             <use_uncompressed_cache>0</use_uncompressed_cache>
             <load_balancing>in_order</load_balancing>
             <log_queries>1</log_queries>
+            <queue_max_wait_ms>1000</queue_max_wait_ms>
+            <max_execution_time>10</max_execution_time>
+            <background_pool_size>2</background_pool_size>
         </default>
     </profiles>
     <users>
